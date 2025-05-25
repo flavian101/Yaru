@@ -27,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="cupcake">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}
       >
-      <Header />
+      <Header/>
+      <div>
         {children}
+      </div>
       </body>
     </html>
   );
