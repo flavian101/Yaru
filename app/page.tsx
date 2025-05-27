@@ -9,7 +9,7 @@ export default function Home() {
       "url(/hero.jpg)",
   }}
 >
-  <div className="hero-overlay"></div>
+  <div className="hero-overlay bg-transparent"></div>
   <div className="hero-content text-neutral-content text-center">
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold animate__animated animate__fadeInUp">Hello there</h1>
