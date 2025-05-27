@@ -1,91 +1,219 @@
-import React from 'react'
-import Sidebar from '../components/sidebar/sidebar'
-import { Project } from '../types/project';
-import ProjectList from '../components/project/projectList';
+import React from "react";
+import Sidebar from "../components/sidebar/sidebar";
+import { Project } from "../types/project";
+import ProjectList from "../components/project/projectList";
 
-{/** testing data */}
+{
+  /** testing data */
+}
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Project Alpha',
-    desc:"This project studies the effect of Alpha particles exposure on lead ",
-    tasks: [],
+    title: "Alpha Radiation Research",
+    desc: "Comprehensive study examining the effects of alpha particle exposure on various lead-based materials and their structural integrity over time.",
+    tasks: [
+      {
+        id: 1,
+        title: "Literature review and research methodology",
+        completed: true,
+        priority: "high",
+        dueDate: new Date("2025-06-01"),
+      },
+      {
+        id: 2,
+        title: "Laboratory equipment setup and calibration",
+        completed: false,
+        priority: "medium",
+        dueDate: new Date("2025-06-15"),
+      },
+      {
+        id: 3,
+        title: "Safety protocol implementation",
+        completed: true,
+        priority: "high",
+        dueDate: new Date("2025-05-20"),
+      },
+      {
+        id: 4,
+        title: "Initial sample testing",
+        completed: false,
+        priority: "medium",
+      },
+    ],
     completed: false,
-    createdAt: new Date('2025-01-01'),
+    createdAt: new Date("2025-01-01"),
+    priority: "high",
+    category: "Research",
   },
   {
     id: 2,
-    title: 'Project Beta',
-    desc:"This project studies the Beta decomposition rate of diffrent radioactive materials",
-    tasks: [],
+    title: "Beta Decay Analysis",
+    desc: "Detailed analysis of beta decomposition rates across different radioactive isotopes to establish predictive models for decay patterns.",
+    tasks: [
+      {
+        id: 5,
+        title: "Sample collection from various sources",
+        completed: true,
+        priority: "high",
+      },
+      {
+        id: 6,
+        title: "Data collection and measurement",
+        completed: true,
+        priority: "medium",
+      },
+      {
+        id: 7,
+        title: "Statistical analysis and modeling",
+        completed: true,
+        priority: "high",
+      },
+      {
+        id: 8,
+        title: "Final report compilation",
+        completed: true,
+        priority: "medium",
+      },
+    ],
     completed: true,
-    createdAt: new Date('2025-02-01'),
+    createdAt: new Date("2025-02-01"),
+    priority: "medium",
+    category: "Research",
   },
   {
     id: 3,
-    title: 'Project Gamma',
-    desc:"this project is about the study of gamma radiation",
-    tasks: [],
+    title: "Gamma Radiation Effects Study",
+    desc: "Investigation into the biological and material effects of gamma radiation exposure with focus on protective measures and mitigation strategies.",
+    tasks: [
+      {
+        id: 9,
+        title: "Safety protocols development",
+        completed: true,
+        priority: "high",
+      },
+      {
+        id: 10,
+        title: "Measurement procedures standardization",
+        completed: true,
+        priority: "medium",
+      },
+      {
+        id: 11,
+        title: "Equipment testing and validation",
+        completed: true,
+        priority: "low",
+      },
+    ],
     completed: true,
-    createdAt: new Date('2025-04-01'),
+    createdAt: new Date("2025-04-01"),
+    priority: "low",
+    category: "Research",
   },
   {
     id: 4,
-    title: 'Project Lambda',
-    desc:"This project studied the lambda function when weighted by the loss function",
-    tasks: [],
+    title: "Lambda Function Optimization",
+    desc: "Machine learning project focused on optimizing lambda functions when weighted by custom loss functions to improve model performance.",
+    tasks: [
+      {
+        id: 12,
+        title: "Algorithm design and implementation",
+        completed: true,
+        priority: "high",
+      },
+      {
+        id: 13,
+        title: "Performance benchmarking",
+        completed: true,
+        priority: "medium",
+      },
+      {
+        id: 14,
+        title: "Code optimization and refactoring",
+        completed: true,
+        priority: "low",
+      },
+    ],
     completed: true,
-    createdAt: new Date('2025-04-05'),
+    createdAt: new Date("2025-04-05"),
+    priority: "medium",
+    category: "Development",
   },
-    {
+  {
     id: 5,
-    title: 'Project zeta',
-    desc:"This project studies the Riemann zeta funtion and its role in the analytic number theory.s",
-    tasks: [],
-    completed: true,
-    createdAt: new Date('2025-04-05'),
+    title: "Riemann Zeta Function Research",
+    desc: "Advanced mathematical research exploring the Riemann zeta function's applications in analytic number theory and its computational implications.",
+    tasks: [
+      {
+        id: 15,
+        title: "Mathematical proof development",
+        completed: false,
+        priority: "high",
+        dueDate: new Date("2025-07-01"),
+      },
+      {
+        id: 16,
+        title: "Computational verification algorithms",
+        completed: false,
+        priority: "medium",
+      },
+      {
+        id: 17,
+        title: "Peer review preparation",
+        completed: false,
+        priority: "low",
+        dueDate: new Date("2025-08-15"),
+      },
+    ],
+    completed: false,
+    createdAt: new Date("2025-04-05"),
+    priority: "high",
+    category: "Research",
   },
 ];
+
 const Homepage = () => {
   return (
-
     <div>
-      <Sidebar/>
+      <Sidebar />
       <div>
-        <h1 className='text_gradient text-center font-bold text-4xl pl-70'>My Projects</h1>
+        <h1 className="text_gradient text-center font-bold text-4xl pl-70">
+          My Projects
+        </h1>
       </div>
       {/* main projects area area */}
-      <div className='flex pl-4 pr-4 space-x-5'>
-          <div className=' border max-h-screen rounded-2xl p-4 w-90'>
-              <p className="text-black font-semibold">
-                Manage Your Projects
-              </p>
-        <label className="input mt-2">
-        <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <g
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            strokeWidth="2.5"
-            fill="none"
-            stroke="currentColor"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </g>
-        </svg>
-        <input type="search" className="grow" placeholder="Search for project or task" />
-      </label>
-
-          
-
-          </div>
-          <div className='border rounded-3xl'>
-              <ProjectList projects ={projects} />
-          </div>
-
+      <div className="flex pl-4 pr-4 space-x-5">
+        <div className=" border max-h-screen rounded-2xl p-4 w-90">
+          <p className="text-black font-semibold">Manage Your Projects</p>
+          <label className="input mt-2">
+            <svg
+              className="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              type="search"
+              className="grow"
+              placeholder="Search for project or task"
+            />
+          </label>
+        </div>
+        <div className="border rounded-3xl">
+          <ProjectList projects={projects} />
+        </div>
       </div>
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;
