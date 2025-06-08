@@ -175,41 +175,25 @@ const Homepage = () => {
   return (
     <div>
       <Sidebar />
-      <div>
-        <h1 className="text_gradient text-center font-bold text-4xl pl-70">
-          My Projects
-        </h1>
-      </div>
-      {/* main projects area area */}
-      <div className="flex pl-4 pr-4 space-x-5">
-        <div className=" border max-h-screen rounded-2xl p-4 w-90">
-          <p className="text-black font-semibold">Manage Your Projects</p>
-          <label className="input mt-2">
-            <svg
-              className="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </g>
-            </svg>
-            <input
-              type="search"
-              className="grow"
-              placeholder="Search for project or task"
-            />
-          </label>
+      <div className="lg:ml-72 transition-all duration-300">
+        <div className="container mx-auto px-6 py-8">
+          <div className="text-center mb-8">
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-4">
+              My Projects
+            </h1>
+            <p className="text-base-content/70 text-lg max-w-2xl mx-auto">
+              Manage your projects efficiently with our intuitive task
+              management system. Track progress, organize tasks, and achieve
+              your goals.
+            </p>
+          </div>
         </div>
-        <div className="border rounded-3xl">
-          <ProjectList projects={projects} />
+
+        {/** separate div */}
+        <div className="flex pl-4 pr-4 space-x-5">
+          <div className="border rounded-3xl">
+            <ProjectList projects={projects} />
+          </div>
         </div>
       </div>
     </div>
