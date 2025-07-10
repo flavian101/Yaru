@@ -72,7 +72,7 @@ A modern, intuitive project management application built with Next.js that helps
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
 - **Language**: TypeScript
 - **Icons**: Heroicons (via SVG)
