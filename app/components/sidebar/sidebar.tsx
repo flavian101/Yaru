@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+
+const Sidebar =({isCollapsed}) => {
+
   const pathname = usePathname();
 
   const navigationItems = [
@@ -188,68 +188,13 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile Overlay */}
-      <div
-        className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300 ${
-          isCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
-        onClick={() => setIsCollapsed(true)}
-      ></div>
-
       {/* Sidebar */}
       <div
-        className={`fixed left-0 rounded-r-2xl top-16 bottom-0 z-50 bg-base-100 border-r border-base-300 transition-all duration-300 ${
+        className={`rounded-r-2xl bg-base-200 border-r border-base-300 transition-all duration-300 ${
           isCollapsed ? "-translate-x-full lg:w-16" : "w-72"
-        } lg:translate-x-0 shadow-lg`}
+        } lg:translate-x-0 `}
       >
-        {/* Toggle Button */}
-        <button
-          type="button"
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute -right-0 top-9 btn btn-circle btn-sm bg-base-100 border-base-300 shadow-md hover:shadow-lg z-10"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`h-4 w-4 transition-transform duration-300 ${
-              isCollapsed ? "rotate-180" : ""
-            }`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
         <div className="flex flex-col h-full p-4">
-          {/* User Profile Section */}
-          {!isCollapsed && (
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-4 mb-6 border border-primary/20">
-              <div className="flex items-center space-x-3">
-                <div className="avatar">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <span className=" text- center text-primary-content font-bold text-sm">
-                      JD
-                    </span>
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-base-content truncate">
-                    John Doe
-                  </p>
-                  <p className="text-xs text-base-content/60 truncate">
-                    john.doe@example.com
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
           {/* Navigation */}
           <nav className="flex-1">
             <div className="space-y-2">
@@ -406,25 +351,6 @@ const Sidebar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsCollapsed(false)}
-        className="fixed top-24 left-4 z-40 btn btn-circle btn-sm bg-base-100 border-base-300 shadow-lg lg:hidden"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
 
       {/* Main Content Spacer */}
       <div

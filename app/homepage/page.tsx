@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import { Project } from "../types/project";
 import ProjectList from "../components/project/projectList";
+import Analytics from "../components/Analytics/Analytics";
 
 {
   /** testing data */
@@ -174,18 +175,20 @@ const projects: Project[] = [
 const Homepage = () => {
   return (
     <div>
-      <Sidebar />
       <div className="lg:ml-72 transition-all duration-300">
         <div className="container mx-auto px-6 py-8">
           <div className="text-center mb-8">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-4">
-              My Projects
+              Overview
             </h1>
             <p className="text-base-content/70 text-lg max-w-2xl mx-auto">
               Manage your projects efficiently with our intuitive task
               management system. Track progress, organize tasks, and achieve
               your goals.
             </p>
+            <div>
+              <Analytics />
+            </div>
           </div>
         </div>
 

@@ -1,4 +1,3 @@
-import Task from "@/app/types/task";
 
 export interface Project {
   id: number;

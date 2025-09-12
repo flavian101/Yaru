@@ -1,10 +1,49 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import Sidebar from "../sidebar/sidebar";
 
-const Header = () => {
+const Header = ({children}) => {
+    const [isCollapsed, setIsCollapsed] = useState(false);
+
   return (
-    <div className="fixed top-0 w-full z-50  backdrop-blur-xl  flex justify-between items-center">
-      <div className="pl-5 flex items-center space-x-3">
+    <>
+      <div className="backdrop-blur-xl  flex justify-between items-center">
+        <div className="pl-5 flex items-center space-x-3">
+
+        {/* Mobile Overlay */}
+      <div
+        className={`fixed lg:hidden transition-opacity duration-300 ${
+          isCollapsed ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+        onClick={() => setIsCollapsed(true)}
+      ></div>
+
+        <button
+          type="button"
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className=" btn btn-circle btn-sm bg-base-100 border-base-300"
+        >
+          back
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-4 w-4 transition-transform duration-300 ${
+              isCollapsed ? "rotate-180" : ""
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
         <Image
           src={"/logo.png"}
           alt={"yaru logo"}
@@ -64,6 +103,12 @@ const Header = () => {
         </div>
       </div>
     </div>
+    <div className="flex">
+      <Sidebar isCollapsed={isCollapsed}/>
+      {children}
+    </div>
+    </>
+
   );
 };
 
