@@ -187,7 +187,7 @@ const Homepage = () => {
               your goals.
             </p>
             <div>
-              <Analytics />
+              <Analytics projects={projects}/>
             </div>
           </div>
         </div>

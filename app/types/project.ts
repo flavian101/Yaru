@@ -9,3 +9,6 @@ export interface Project {
   priority: "low" | "medium" | "high";
   category: string;
 }
+export interface  Projects{
+  projects: Project[];
+}

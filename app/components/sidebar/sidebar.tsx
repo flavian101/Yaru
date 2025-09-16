@@ -2,9 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
-const Sidebar =({isCollapsed}) => {
-
+const Sidebar = ({ isCollapsed }: { isCollapsed: boolean }) => {
   const pathname = usePathname();
 
   const navigationItems = [
