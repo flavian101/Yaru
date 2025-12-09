@@ -1,7 +1,7 @@
-interface Task {
+export interface Task {
   id: number;
   title: string;
-  value: string;
+  desc: string;
   completed: boolean;
   createdAt: Date;
   priority: "low" | "medium" | "high";
