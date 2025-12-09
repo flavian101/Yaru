@@ -107,7 +107,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
                 task.completed ? "line-through opacity-60" : ""
               }`}
             >
-              {task.value}
+              {task.desc}
             </p>
 
             <div className="flex items-center justify-between mt-3">
