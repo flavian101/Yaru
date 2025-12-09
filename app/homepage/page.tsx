@@ -175,7 +175,6 @@ const projects: Project[] = [
 const Homepage = () => {
   return (
     <div>
-      <div className="lg:ml-72 transition-all duration-300">
         <div className="container mx-auto px-6 py-8">
           <div className="text-center mb-8">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-4">
@@ -199,7 +198,6 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
